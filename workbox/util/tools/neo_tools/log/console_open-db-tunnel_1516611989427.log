@@ -1,0 +1,12 @@
+2018-01-22 14:36:29,922 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a af91a028a -u p1942289352 -h eu1.hana.ondemand.com --id i4t -p ********
+2018-01-22 14:36:31,697 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2018-01-22 14:36:32,466 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2018-01-22 14:36:32,470 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [771] ms
+2018-01-22 14:36:32,529 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2018-01-22 14:36:37,026 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.client.handshake.ClientProtocolHandshaker: Sending handshake request for tunnel: jdbc:///i4t/tbfbd17e2329740ef86d705798cfa7595 and host connectivitytunnel.eu1.hana.ondemand.com
+2018-01-22 14:36:37,607 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Registered tunnel channel [id: 0x60731d1c, L:/172.16.30.87:64655 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443] for tunnel id "jdbc:///i4t/tbfbd17e2329740ef86d705798cfa7595" and client id "6b928812-4027-4e9d-bc48-0bdfbb2e30f2"
+2018-01-22 14:36:37,608 INFO  [main] com.sap.core.connectivity.tunnel.client.AbstractTunnelClient: Successfully established tunnel: [id: 0x60731d1c, L:/172.16.30.87:64655 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443]
+2018-01-22 14:36:39,791 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Started proxy server at port: 30015
+2018-01-22 14:36:39,791 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server pool size: 20
+2018-01-22 14:36:39,792 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server max heap per channel: 4194304
+2018-01-22 14:36:39,792 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server max heap for all channels: 134217728

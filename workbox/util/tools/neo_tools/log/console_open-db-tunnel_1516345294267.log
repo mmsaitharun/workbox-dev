@@ -1,0 +1,4 @@
+2018-01-19 12:31:35,921 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a p1942289352trial -u p1942289352 -h hanatrial.ondemand.com --id demodb -p ********
+2018-01-19 12:31:37,921 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2018-01-19 12:31:38,140 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: No SDK status file for your configuration was found. Creating a new status file...
+2018-01-19 12:31:40,953 ERROR [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity status could not be obtained within 3 seconds. This should not affect the command's execution.

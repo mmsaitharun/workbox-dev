@@ -1,0 +1,30 @@
+2017-12-26 12:33:49,172 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -h hana.ondemand.com -u workbox -a p1942289352trial --id workbox
+2017-12-26 12:33:50,837 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-26 12:33:51,018 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2017-12-26 12:33:51,019 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [182] ms
+2017-12-26 12:34:00,704 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-26 12:34:03,200 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2017-12-26 12:34:03,213 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR: Wrong credentials. Enter correct user name and password. Note that your user will be locked after 5 consecutive failed authentication attempts.
+com.sap.jpaas.infrastructure.console.exception.SecurityException: Wrong credentials. Enter correct user name and password. Note that your user will be locked after 5 consecutive failed authentication attempts.
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:206)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)
+Caused by: com.sap.core.utils.infrastructure.validation.AuthenticationException: Wrong credentials. Enter correct user name and password. Note that your user will be locked after 5 consecutive failed authentication attempts.
+	at com.sap.core.utils.infrastructure.validation.LandscapeHostValidator.validateHttpResponseStatus(LandscapeHostValidator.java:434)
+	at com.sap.core.utils.infrastructure.validation.HttpResponseValidator.process(HttpResponseValidator.java:36)
+	at org.apache.http.protocol.ImmutableHttpProcessor.process(ImmutableHttpProcessor.java:139)
+	at org.apache.http.protocol.HttpRequestExecutor.postProcess(HttpRequestExecutor.java:308)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:495)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:68)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:183)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:144)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:242)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:184)
+	... 1 more

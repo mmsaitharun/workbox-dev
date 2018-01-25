@@ -1,0 +1,46 @@
+2017-12-29 09:58:22,057 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a p1942289352trial -u p1942289352 -h hanatrail.ondemand.com --id demodb -p ********
+2017-12-29 09:58:23,280 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-29 09:58:23,414 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: No SDK status file for your configuration was found. Creating a new status file...
+2017-12-29 09:58:23,716 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check was not successful. This should not affect the command's execution
+2017-12-29 09:58:23,717 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [436] ms
+2017-12-29 09:58:23,730 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-29 09:58:23,819 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2017-12-29 09:58:23,822 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR; Could not connect to host: https://services.hanatrail.ondemand.com/services/v1/instances/p1942289352trial/persistence/v3/dbtunnel/schemaId/demodb. Make sure your proxy settings are correct
+com.sap.jpaas.infrastructure.console.exception.ValidationException
+	at com.sap.core.tunnelcommands.framework.executor.HttpClientProvider.createClientWithBasicAuthentication(HttpClientProvider.java:43)
+	at com.sap.core.tunnelcommands.framework.executor.HttpClientProvider.createClientWithBasicAuth(HttpClientProvider.java:33)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.getClientWithBasicAuth(CommandTunnelRequestExecutor.java:160)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:59)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:183)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:144)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:242)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:184)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)
+Caused by: com.sap.core.utils.infrastructure.validation.HostValidationException: java.net.UnknownHostException: services.hanatrail.ondemand.com
+	at com.sap.core.utils.infrastructure.validation.LandscapeHostValidator.getHttpClient(LandscapeHostValidator.java:367)
+	at com.sap.core.tunnelcommands.framework.executor.HttpClientProvider.createClientWithBasicAuthentication(HttpClientProvider.java:40)
+	... 13 more
+Caused by: java.net.UnknownHostException: services.hanatrail.ondemand.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:115)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at com.sap.core.utils.infrastructure.validation.LandscapeHostValidator.getHttpClient(LandscapeHostValidator.java:345)
+	... 14 more

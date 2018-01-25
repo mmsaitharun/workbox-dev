@@ -1,0 +1,40 @@
+2018-01-04 12:16:36,487 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a af91a028a -u p1942289352 -h eu1.hana.ondemand.com --id i4t -p ********
+2018-01-04 12:16:38,082 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2018-01-04 12:16:38,206 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: No SDK status file for your configuration was found. Creating a new status file...
+2018-01-04 12:16:40,196 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: Successfully performed version validity check. The returned status is UPDATE_AVAILABLE
+2018-01-04 12:16:40,201 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2018-01-04 12:16:40,202 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [2120] ms
+2018-01-04 12:16:40,212 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2018-01-04 12:16:43,961 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.client.handshake.ClientProtocolHandshaker: Sending handshake request for tunnel: jdbc:///i4t/tc4bc66f43a75485399209237e1345c2b and host connectivitytunnel.eu1.hana.ondemand.com
+2018-01-04 12:16:44,565 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Registered tunnel channel [id: 0xfc0913e5, L:/172.16.30.67:52834 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443] for tunnel id "jdbc:///i4t/tc4bc66f43a75485399209237e1345c2b" and client id "d661e76a-0c9a-40ed-9491-3127c6c74cbc"
+2018-01-04 12:16:44,567 INFO  [main] com.sap.core.connectivity.tunnel.client.AbstractTunnelClient: Successfully established tunnel: [id: 0xfc0913e5, L:/172.16.30.67:52834 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443]
+2018-01-04 12:16:46,722 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Started proxy server at port: 30015
+2018-01-04 12:16:46,722 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server pool size: 20
+2018-01-04 12:16:46,722 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server max heap per channel: 4194304
+2018-01-04 12:16:46,722 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server max heap for all channels: 134217728
+2018-01-04 14:10:15,721 ERROR [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.handlers.TunnelErrorHandler: Unexpected problem during tunnel processing in channel [id: 0xfc0913e5, L:/172.16.30.67:52834 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443]; Reason: An existing connection was forcibly closed by the remote host
+2018-01-04 14:10:16,707 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Unregistered tunnel channel [id: 0xfc0913e5, L:/172.16.30.67:52834 ! R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443] for tunnel id "jdbc:///i4t/tc4bc66f43a75485399209237e1345c2b"
+2018-01-04 14:10:16,812 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Close tunnel with id "jdbc:///i4t/tc4bc66f43a75485399209237e1345c2b" and client id "d661e76a-0c9a-40ed-9491-3127c6c74cbc"
+2018-01-04 17:56:52,349 ERROR [forwardingproxy-6-4] com.sap.core.connectivity.tunnel.core.handlers.AbstractErrorHandler: Exception in forwarding proxy
+com.sap.core.connectivity.spi.NoChannelsAvailableException: No tunnel channels are available to handle this request
+	at com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl.getTunnel(TunnelRegistryImpl.java:208)
+	at com.sap.core.connectivity.tunnel.core.impl.proxy.ForwardingProxyInboundRequestProcessorHandler.channelActive(ForwardingProxyInboundRequestProcessorHandler.java:63)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:218)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:204)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelActive(AbstractChannelHandlerContext.java:197)
+	at com.sap.core.connectivity.tunnel.core.impl.proxy.InboundLoggingHandler.channelActive(InboundLoggingHandler.java:32)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:218)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:204)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelActive(AbstractChannelHandlerContext.java:197)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelActive(DefaultChannelPipeline.java:1282)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:218)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelActive(AbstractChannelHandlerContext.java:204)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelActive(DefaultChannelPipeline.java:887)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:461)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:375)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:425)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:408)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:441)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Unknown Source)

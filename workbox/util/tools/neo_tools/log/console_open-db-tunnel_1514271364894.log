@@ -1,0 +1,3 @@
+2017-12-26 12:26:07,527 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -h 10.120.164.240 -u workbox
+2017-12-26 12:26:10,126 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-26 12:26:10,126 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms

@@ -1,0 +1,30 @@
+2017-12-26 13:40:25,969 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a af91a028a -u P1942735899 -h eu1.hana.ondemand.com -i PEPSI_POC
+2017-12-26 13:40:27,497 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-26 13:40:27,622 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2017-12-26 13:40:27,623 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [126] ms
+2017-12-26 13:40:36,549 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-26 13:40:38,576 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: Failed to connect to the backend: bad request
+2017-12-26 13:40:38,577 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: request URI: https://services.eu1.hana.ondemand.com/services/v1/instances/af91a028a/persistence/v3/dbtunnel/schemaId/PEPSI_POC
+2017-12-26 13:40:38,577 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: statusCode: 400 Bad Request
+2017-12-26 13:40:38,578 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: contentType: text/plain
+2017-12-26 13:40:38,578 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: content: Invalid schema ID 'PEPSI_POC'. A schema ID can only contain alphanumeric characters (a-z, A-Z, 0-9) and the special characters dot ('.') and dash ('-'). It must start with a letter and not end with a dot.
+2017-12-26 13:40:38,579 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2017-12-26 13:40:38,589 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR: Failed to connect to the backend: bad request
+Invalid schema ID 'PEPSI_POC'. A schema ID can only contain alphanumeric characters (a-z, A-Z, 0-9) and the special characters dot ('.') and dash ('-'). It must start with a letter and not end with a dot.
+com.sap.jpaas.infrastructure.console.exception.CommandException: Failed to connect to the backend: bad request
+Invalid schema ID 'PEPSI_POC'. A schema ID can only contain alphanumeric characters (a-z, A-Z, 0-9) and the special characters dot ('.') and dash ('-'). It must start with a letter and not end with a dot.
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:90)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:54)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:49)
+	at com.sap.core.persistence.commands.tunnel.api.OpenDbTunnelConsumer.consume(OpenDbTunnelConsumer.java:34)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:97)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:183)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:144)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:242)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:184)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)

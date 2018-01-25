@@ -1,0 +1,17 @@
+2017-12-26 14:53:27,778 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a af91a028a -u p1942289352 -h eu1.hana.ondemand.com --id i4t -p ********
+2017-12-26 14:53:29,311 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-26 14:53:29,448 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2017-12-26 14:53:29,449 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [138] ms
+2017-12-26 14:53:29,464 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-26 14:53:33,430 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.client.handshake.ClientProtocolHandshaker: Sending handshake request for tunnel: jdbc:///i4t/t6794cfa682e24acba42722c35b5a805e and host connectivitytunnel.eu1.hana.ondemand.com
+2017-12-26 14:53:34,096 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Registered tunnel channel [id: 0x3c69c6a4, L:/172.16.30.70:55255 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443] for tunnel id "jdbc:///i4t/t6794cfa682e24acba42722c35b5a805e" and client id "d8aa01c1-5218-4d4c-973c-78c96149e069"
+2017-12-26 14:53:34,098 INFO  [main] com.sap.core.connectivity.tunnel.client.AbstractTunnelClient: Successfully established tunnel: [id: 0x3c69c6a4, L:/172.16.30.70:55255 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443]
+2017-12-26 14:53:36,456 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Started proxy server at port: 30015
+2017-12-26 14:53:36,457 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server pool size: 20
+2017-12-26 14:53:36,457 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server max heap per channel: 4194304
+2017-12-26 14:53:36,457 INFO  [main] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Proxy server max heap for all channels: 134217728
+2017-12-26 14:53:45,118 ERROR [forwardingproxy-6-1] com.sap.core.connectivity.tunnel.core.handlers.AbstractErrorHandler: Input/output exception in forwarding proxy: java.io.IOException: An existing connection was forcibly closed by the remote host
+2017-12-26 15:18:22,681 INFO  [Thread-1] com.sap.core.connectivity.tunnel.core.impl.proxy.AbstractProxyServer: Stopped proxy server at port: 30015
+2017-12-26 15:18:22,689 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Unregistered tunnel channel [id: 0x3c69c6a4, L:/172.16.30.70:55255 ! R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443] for tunnel id "jdbc:///i4t/t6794cfa682e24acba42722c35b5a805e"
+2017-12-26 15:18:22,689 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Close tunnel with id "jdbc:///i4t/t6794cfa682e24acba42722c35b5a805e" and client id "d8aa01c1-5218-4d4c-973c-78c96149e069"
+2017-12-26 15:18:22,695 INFO  [Thread-1] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)

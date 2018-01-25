@@ -1,0 +1,32 @@
+2017-12-29 10:01:42,466 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a p1942289352trial -u p1942289352 -h hanatrial.ondemand.com --id demodb -p ********
+2017-12-29 10:01:43,665 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-29 10:01:43,782 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: No SDK status file for your configuration was found. Creating a new status file...
+2017-12-29 10:01:45,120 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: There is no tools page available on host hanatrial.ondemand.com. The default tools page on host hana.ondemand.com will be used instead. This is expected behaviour as some hosts do not have corresponding tools pages
+2017-12-29 10:01:45,126 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2017-12-29 10:01:45,126 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [1459] ms
+2017-12-29 10:01:45,140 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-29 10:01:46,720 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: Failed to connect to the backend: bad request
+2017-12-29 10:01:46,720 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: request URI: https://services.hanatrial.ondemand.com/services/v1/instances/p1942289352trial/persistence/v3/dbtunnel/schemaId/demodb
+2017-12-29 10:01:46,721 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: statusCode: 400 Bad Request
+2017-12-29 10:01:46,721 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: contentType: text/plain
+2017-12-29 10:01:46,721 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: content: A database tunnel cannot be opened for HANA databases in state 'STOPPED'.
+2017-12-29 10:01:46,722 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2017-12-29 10:01:46,730 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR: Failed to connect to the backend: bad request
+A database tunnel cannot be opened for HANA databases in state 'STOPPED'.
+com.sap.jpaas.infrastructure.console.exception.CommandException: Failed to connect to the backend: bad request
+A database tunnel cannot be opened for HANA databases in state 'STOPPED'.
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:90)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:54)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:49)
+	at com.sap.core.persistence.commands.tunnel.api.OpenDbTunnelConsumer.consume(OpenDbTunnelConsumer.java:34)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:97)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:183)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:144)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:242)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:184)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)

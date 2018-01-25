@@ -1,0 +1,8 @@
+2017-12-29 09:57:34,872 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a af91a028a -u p1942289352 -h eu1.hana.ondemand.com --id i4t -p ********
+2017-12-29 09:57:36,404 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-29 09:57:36,520 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2017-12-29 09:57:36,522 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [117] ms
+2017-12-29 09:57:36,538 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-29 09:57:40,537 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.client.handshake.ClientProtocolHandshaker: Sending handshake request for tunnel: jdbc:///i4t/t2f576cc783404db2a5230a791d7f3133 and host connectivitytunnel.eu1.hana.ondemand.com
+2017-12-29 09:57:41,178 INFO  [tunnelclient-2-1] com.sap.core.connectivity.tunnel.core.impl.context.TunnelRegistryImpl: Registered tunnel channel [id: 0x412ebd5f, L:/172.16.30.70:53927 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443] for tunnel id "jdbc:///i4t/t2f576cc783404db2a5230a791d7f3133" and client id "9d678960-bd69-4102-8239-2208dd20bd63"
+2017-12-29 09:57:41,179 INFO  [main] com.sap.core.connectivity.tunnel.client.AbstractTunnelClient: Successfully established tunnel: [id: 0x412ebd5f, L:/172.16.30.70:53927 - R:connectivitytunnel.eu1.hana.ondemand.com/155.56.210.84:443]

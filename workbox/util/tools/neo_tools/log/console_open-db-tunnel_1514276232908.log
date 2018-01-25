@@ -1,0 +1,32 @@
+2017-12-26 13:47:13,515 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a af91a028a -u S0016270146 -h eu1.hana.ondemand.com -i workbox
+2017-12-26 13:47:15,078 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2017-12-26 13:47:15,199 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check is completed
+2017-12-26 13:47:15,200 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [121] ms
+2017-12-26 13:47:21,653 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.2.0)
+2017-12-26 13:47:23,988 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: A problem occurred.
+2017-12-26 13:47:23,988 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: request URI: https://services.eu1.hana.ondemand.com/services/v1/instances/af91a028a/persistence/v3/dbtunnel/schemaId/workbox
+2017-12-26 13:47:23,989 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: statusCode: 404 Not Found
+2017-12-26 13:47:23,989 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: contentType: text/plain
+2017-12-26 13:47:23,994 ERROR [main] com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy: content: Database or schema 'workbox' not found.
+2017-12-26 13:47:23,994 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2017-12-26 13:47:24,004 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR: A problem occurred.
+Database or schema 'workbox' not found.
+com.sap.jpaas.infrastructure.console.exception.CommandException: A problem occurred.
+Database or schema 'workbox' not found.
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:90)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:54)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.throwCommandExceptionWithContentInfoAndLog(DefaultResponseConsumingStrategy.java:49)
+	at com.sap.core.tunnelcommands.framework.executor.DefaultResponseConsumingStrategy.consume(DefaultResponseConsumingStrategy.java:43)
+	at com.sap.core.tunnelcommands.framework.executor.JsonConsumingStrategy.consume(JsonConsumingStrategy.java:31)
+	at com.sap.core.persistence.commands.tunnel.api.OpenDbTunnelConsumer.consume(OpenDbTunnelConsumer.java:37)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:97)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:183)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:144)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:242)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:184)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)

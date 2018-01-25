@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="workbox_pu" transaction-type="RESOURCE_LOCAL">
+		<class>oneapp.incture.workbox.pmc.entity.ProcessConfigDo</class>
+		<class>oneapp.incture.workbox.pmc.entity.ProcessStepsDo</class>
+		<class>oneapp.incture.workbox.pmc.entity.ReportAgingDo</class>
+		<class>oneapp.incture.workbox.pmc.entity.RuleManagementDo</class>
+		<class>oneapp.incture.workbox.pmc.entity.SlaManagementDo</class>
+		<class>oneapp.incture.workbox.pmc.entity.TaskMappingDo</class>
+		<class>oneapp.incture.workbox.pmc.entity.WorkloadRangeDo</class>
+		<class>oneapp.incture.workbox.inbox.entity.CollaborationDo</class>
+		<class>oneapp.incture.workbox.poadapter.entity.ProcessEventsDo</class>
+		<class>oneapp.incture.workbox.poadapter.entity.TaskEventsDo</class>
+		<class>oneapp.incture.workbox.poadapter.entity.TaskEventsDoPK</class>
+		<class>oneapp.incture.workbox.poadapter.entity.TaskOwnersDo</class>
+		<class>oneapp.incture.workbox.poadapter.entity.TaskOwnersDoPK</class>
+		
+		<properties>
+               <property name="eclipselink.ddl-generation" value="create-tables" />
+               <property name="eclipselink.ddl-generation.output-mode" value="both" />
+			<property name="eclipselink.logging.level" value="FINEST" />
+		</properties>
+		
+	</persistence-unit>
+</persistence>
